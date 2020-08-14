@@ -1,0 +1,39 @@
+#check hibernate support
+cat /sys/power/state
+	# o/p : 'freeze mem disk'. if disk is listed, then system supports hibernate.
+
+#update grub to point to the swap partition on resume
+grep swap /etc/fstab
+	#o/p : 'UUID=14cee2ec-9d37-4ac0-b594-eae0e55814aa none swap sw 0 0'
+sudo nano /etc/default/grub
+  # modify GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+  # to
+  # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=14cee2ec-9d37-4ac0-b594-eae0e55814aa"
+sudo update-grub
+
+#configure the initramfs
+sudo nano /etc/initramfs-tools/conf.d/resume
+  # update to RESUME=UUID=14cee2ec-9d37-4ac0-b594-eae0e55814aa
+
+#re-enable the hibernate menu
+sudo nano /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+  #copy and paste the following value and save the file
+[Re-enable hibernate by default in upower]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+
+[Re-enable hibernate by default in logind]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
+ResultActive=yes
+
+#configure lid switch actions - if you want auto hibernate on closing the lid
+sudo nano /etc/systemd/logind.conf
+  #HandleLidSwitch=poweroff
+  #uncomment it and modify it to
+HandleLidSwitch=hibernate
+
+#restart system logind service
+sudo systemctl restart systemd-logind.service
+sudo systemctl hibernate
