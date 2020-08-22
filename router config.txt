@@ -1,0 +1,3 @@
+192.168.1.1
+Network -> LAN IP Address -> Lan DNS Mode -> static(prev - HGWProxy)
+
