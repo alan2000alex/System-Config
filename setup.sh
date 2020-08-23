@@ -58,9 +58,9 @@ sudo apt-get install -y libdbus-1-dev bluez libsbc-dev sbc-tools ffmpeg libavcod
 #export DEB_DISTRO=$(lsb_release -sc)
 #sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
 #echo "deb https://ookla.bintray.com/debian ${DEB_DISTRO} main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
+#sudo apt update -y
+#sudo apt install -y speedtest
 
-sudo apt update -y
-sudo apt install -y speedtest
 sudo apt-get update -y
 sudo apt update -y
 sudo apt-get dist-upgrade -y
