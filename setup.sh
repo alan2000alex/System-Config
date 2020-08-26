@@ -61,6 +61,9 @@ sudo apt-get install -y libdbus-1-dev bluez libsbc-dev sbc-tools ffmpeg libavcod
 #sudo apt update -y
 #sudo apt install -y speedtest
 
+#pulseaudio controller
+sudo apt install pavucontrol -y
+
 sudo apt-get update -y
 sudo apt update -y
 sudo apt-get dist-upgrade -y
