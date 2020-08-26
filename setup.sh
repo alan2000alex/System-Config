@@ -64,6 +64,11 @@ sudo apt-get install -y libdbus-1-dev bluez libsbc-dev sbc-tools ffmpeg libavcod
 #pulseaudio controller
 sudo apt install pavucontrol -y
 
+#lm-sensor, psensor
+#sudo apt install lm-sensors -y
+#sudo sensors-detect
+#sudo apt install psensor
+
 sudo apt-get update -y
 sudo apt update -y
 sudo apt-get dist-upgrade -y
