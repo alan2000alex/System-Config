@@ -69,6 +69,9 @@ sudo apt install pavucontrol -y
 #sudo sensors-detect
 #sudo apt install psensor
 
+#net-tools
+sudo apt install net-tools -y
+
 sudo apt-get update -y
 sudo apt update -y
 sudo apt-get dist-upgrade -y
