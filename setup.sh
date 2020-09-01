@@ -72,6 +72,9 @@ sudo apt install pavucontrol -y
 #net-tools
 sudo apt install net-tools -y
 
+#aptitude
+sudo apt install aptitude -y
+
 sudo apt-get update -y
 sudo apt update -y
 sudo apt-get dist-upgrade -y
