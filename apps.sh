@@ -42,6 +42,13 @@ sudo apt update && sudo apt install signal-desktop
 wget --quiet --output-document - https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 sudo apt install apt-transport-https && sudo apt update && sudo apt install signal-desktop-beta
+
+#Virtual-Box
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee -a /etc/apt/sources.list.d/virtualbox.list
+sudo apt update -y
+sudo apt install virtualbox-6.1 -y 
+
 #spotify
 sudo snap install spotify
 #android studio
