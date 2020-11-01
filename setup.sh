@@ -4,6 +4,9 @@ sudo apt install -y python3 python3-pip
 sudo apt install -y apt-transport-https software-properties-common add-apt-repository multiverse universe
 sudo apt install -y tcptraceroute
 
+#swaks
+sudo apt install -y swaks
+
 # apt-get install -y firmware-iwlwifi
 # /sbin/modprobe -r iwlwifi ; /sbin/modprobe iwlwifi
 #pip3 install virtualenv
@@ -21,9 +24,9 @@ sudo apt install -y r-base
 sudo apt install -y build-essential
 
 #Gnome
-#sudo apt-get install -y gnome-shell
-#sudo apt-get install -y ubuntu-gnome-desktop
-#sudo apt install -y gnome-tweaks
+sudo apt-get install -y gnome-shell
+sudo apt-get install -y ubuntu-gnome-desktop
+sudo apt install -y gnome-tweaks
 
 #Node.js & npm : NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -54,16 +57,16 @@ sudo apt-get install -y libdbus-1-dev bluez libsbc-dev sbc-tools ffmpeg libavcod
 #sudo apt install -y bluetooth-dev
 
 #speedtest
-#sudo apt install -y gnupg1 apt-transport-https dirmngr
-#export INSTALL_KEY=379CE192D401AB61
-#export DEB_DISTRO=$(lsb_release -sc)
-#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
-#echo "deb https://ookla.bintray.com/debian ${DEB_DISTRO} main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
-#sudo apt update -y
-#sudo apt install -y speedtest
+sudo apt install -y gnupg1 apt-transport-https dirmngr
+export INSTALL_KEY=379CE192D401AB61
+export DEB_DISTRO=$(lsb_release -sc)
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
+echo "deb https://ookla.bintray.com/debian bionic main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
+sudo apt update -y
+sudo apt install -y speedtest
 
 #pulseaudio controller
-#sudo apt install pavucontrol -y
+sudo apt install pavucontrol -y
 
 #lm-sensor, psensor
 #sudo apt install lm-sensors -y
