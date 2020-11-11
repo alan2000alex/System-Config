@@ -76,6 +76,10 @@ sudo apt install pavucontrol -y
 #net-tools
 sudo apt install net-tools -y
 
+#protonvpn
+sudo apt install -y openvpn dialog python3-pip python3-setuptools
+sudo pip3 install protonvpn-cli
+
 #aptitude
 sudo apt install aptitude -y
 
